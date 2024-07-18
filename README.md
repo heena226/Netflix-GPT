@@ -17,4 +17,9 @@
 
 - Create react app
 - Install TailwindCss and configure it
+- Run CMD - "npm i -D react-router-dom"
+- Header, Body, BrowsePage
+- Login Form
+- Sign Up Form
+
 
