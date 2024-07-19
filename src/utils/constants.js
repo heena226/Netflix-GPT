@@ -1,5 +1,7 @@
 export const LOGIN_BG_IMAGE = "https://assets.nflxext.com/ffe/siteui/vlv3/655a9668-b002-4262-8afb-cf71e45d1956/839d49d1-c05f-4069-a637-8d0433328538/CA-en-20240715-POP_SIGNUP_TWO_WEEKS-perspective_WEB_7810a47e-e741-49c0-965a-15801760c571_small.jpg";
 
+export const USER_IMG = "https://occ-0-7328-1723.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABWHwk9T_pV0xwh3qNnsqDHzMMwdoVXMlbNmSTmbon3-Pf3JVUOAWzIbk8EpYNsSkZ7kFHSZRw-0WLJAPcrvWDUiIIivqBtE.png?r=ab6";
+
 export const NETFLIX_LOGO = (
     <svg
       viewBox="0 0 111 30"
