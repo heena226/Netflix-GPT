@@ -26,5 +26,10 @@ export const API_OPTIONS = {
     Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjN2NiZGJiZjM0MDExMDI0NmQ1OGY2OGE4Zjk2NTcxNCIsIm5iZiI6MTcyMTQzMzg2Ni4zODU0ODIsInN1YiI6IjY2OWFmZTZiMjViODIyNmQ1M2RhZmRjYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G6ajDutqGz6u3gwfK2AHOsleamjwQuGGtldJc-DZcRw'
   }
 };
+
+export const TDMB_IMAGE_URL = (IMAGE_PATH) => "https://image.tmdb.org/t/p/w500/" + IMAGE_PATH;
   
+export const NETFLIX_SIGN = "https://seeklogo.com/images/N/netflix-logo-6A5D357DF8-seeklogo.com.png"
+
+
 

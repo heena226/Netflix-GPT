@@ -37,6 +37,8 @@
 - Get data for the Trailer using all the videos belonged to particular movie
 - Created custom hook for the trailer movie and updated the store MoviesSlice as well
 - Embedded the youtube video and make it auto-play and mute
+- Build Secondary Component
+- 
 
 
 // Using firebase for the data base
