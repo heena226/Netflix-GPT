@@ -49,7 +49,6 @@ const Login = () => {
               const user = userCredential.user;
               console.log(user);
               toast.success(`User authenticated successfully with email ${email.current.value}`)
-              navigate("/browse");
             })
             .catch((error) => {
               const errorCode = error.code;
@@ -79,9 +78,6 @@ const Login = () => {
                     // An error occurred
                     toast.error(`Error while creating account. Error Info - ${error.errorCode}, ${error.errorMessage}`);
                   });
-
-                
-                navigate("/browse");
             })
             .catch((error) => {
                 const errorCode = error.code;

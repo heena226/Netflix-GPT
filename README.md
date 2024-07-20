@@ -30,6 +30,13 @@
 - Calling the addUser and removeUser in top of the app to save the current User
 - Implemented Sign Out
 - Update Profile
+- Unsubscribe to onAuthStateChanged when component unmount
+- Fetch from TMDB Movies
+- Register TMDB API and create an application
+- Get data from TMDB for the Browse Page
+- Get data for the Trailer using all the videos belonged to particular movie
+- Created custom hook for the trailer movie and updated the store MoviesSlice as well
+- Embedded the youtube video and make it auto-play and mute
 
 
 // Using firebase for the data base

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NETFLIX_LOGO as APP_LOGO, USER_IMG } from '../utils/constants'
-import { signOut } from 'firebase/auth'; 
+import { onAuthStateChanged, signOut } from 'firebase/auth'; 
 import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser, removeUser } from '../utils/userSlice';
 
 const Header = () => {
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const user = useSelector((store) => store.user);
@@ -15,12 +17,43 @@ const Header = () => {
   const onSignOut = () => {
     signOut(auth).then(() => {
       // Sign-out successful.
-      navigate("/");
       console.log("Sign Out");
     }).catch((error) => {
       // An error happened.
     });
   }
+  
+  useEffect(() => {
+    console.log("Body component called!");
+    // onAuthStateChanged will handle login and browse page navigation
+    // for the logged In user and the Logged out user 
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/auth.user
+          const { uid, displayName, phoneNumber, photoURL, email } = user;
+          // console.log(user);
+          // Dispatch an action to save the user in store
+          dispatch(addUser({
+            uId : user.uid,
+            displayName : user.displayName,
+            phoneNumber : user.phoneNumber,
+            photoURL : user.photoURL,
+            email : user.email
+          }));
+          navigate("/browse");
+        } else {
+          // User is signed out
+          dispatch(removeUser());
+          
+          navigate("/");
+        }
+      });
+
+      // Unsubscribe when component will unmount
+      return () => unSubscribe();
+}, [dispatch]);
+
 
   return (
     <div className='flex justify-between z-10 absolute  px-10 py-5 w-full h-[200px] bg-gradient-to-b from-black'>
