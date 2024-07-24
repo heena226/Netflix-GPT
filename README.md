@@ -48,6 +48,7 @@
 - Showing the resulted movies on the UI using MovieList Component
 - Saved all the keys on .env file and kept the file in the .gitignore file to keep it private
 - Memoization (avail calling APis if the data is already present in the store) implemented in useUpcomingMovies and other custom hooks
+- Make app responsive using the Tailwind.css (only for Browse page and Search page)
 - 
 
 

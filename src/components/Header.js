@@ -72,8 +72,12 @@ const Header = () => {
 
 
   return (
-    <div className='flex justify-between z-10 absolute px-10 py-5 w-full h-[120px] bg-gradient-to-b from-black'>
-        <div className='w-32'>
+    <div 
+      className='flex justify-between z-10 absolute px-10 py-5 w-full h-[120px] bg-gradient-to-b from-black
+                flex-col
+                md:flex-row'
+    >
+        <div className='w-32 mx-auto pb-4 md:pb-0 md:mx-0'>
             {APP_LOGO}
         </div>
         {user && 

@@ -5,8 +5,10 @@ const MovieCard = ({movie}) => {
     const imageURL = TDMB_IMAGE_URL(movie.poster_path);
 
     if(imageURL === "https://image.tmdb.org/t/p/w500/null") return null;
+
   return (
-    <div className='flex-shrink-0 w-[200px] mb-10 pr-2'>
+    <div className='flex-shrink-0 w-[100px] mb-2 pr-2
+                    md:w-[200px] md:mb-10'>
         <div>
             <div className='relative group cursor-pointer'>
                 <img
@@ -17,6 +19,7 @@ const MovieCard = ({movie}) => {
                 <span className='absolute top-2 left-2 w-4'>
                     {<img 
                         src={NETFLIX_SIGN}
+                        className='w-[70%] md:w-[100%]'
                         alt="Netflix"
                     />}
                 </span>

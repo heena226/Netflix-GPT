@@ -72,7 +72,8 @@ const GptSearchBar = () => {
             />
         </div>
         <form 
-            className='absolute top-[15%] px-8 py-12 bg-black bg-opacity-90 w-[90%] mx-[5%]'
+            className='absolute top-[15%] px-2 py-4 bg-black bg-opacity-90 w-[96%] mx-[2%]
+                        md:mx-[5%] md:w-[90%] md:px-8 md:py-12'
             onSubmit={(e) => e.preventDefault()}             
             onClick={() => handleGptSearchButton()}     
         >
@@ -80,10 +81,12 @@ const GptSearchBar = () => {
                 type='text'
                 ref={searchQuery}
                 placeholder={lang[selectedLang.lang].placeholder}
-                className='px-4 py-2 w-[75%] bg-white ml-[5%] border border-white' 
+                className='px-4 py-2 w-[70%] bg-white ml-[2%] border border-white text-xs 
+                            md:ml-[5%] md:w-[75%] md:text-base' 
             />
             <button              
-                className='px-4 py-2 w-[15%] bg-black mr-[5%] text-white border border-white hover:bg-gray-900 cursor-pointer'
+                className='px-4 py-2 w-[25%] bg-black mr-[2%] text-white border border-white hover:bg-gray-900 cursor-pointer text-xs
+                            md:mr-[5%] md:w-[15%] md:text-base'
             >
                 {lang[selectedLang.lang].search}
             </button>
