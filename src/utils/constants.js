@@ -23,7 +23,7 @@ export const API_OPTIONS = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjN2NiZGJiZjM0MDExMDI0NmQ1OGY2OGE4Zjk2NTcxNCIsIm5iZiI6MTcyMTQzMzg2Ni4zODU0ODIsInN1YiI6IjY2OWFmZTZiMjViODIyNmQ1M2RhZmRjYyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.G6ajDutqGz6u3gwfK2AHOsleamjwQuGGtldJc-DZcRw'
+    Authorization: 'Bearer ' + process.env.REACT_APP_TMDB_KEY,
   }
 };
 
@@ -31,5 +31,24 @@ export const TDMB_IMAGE_URL = (IMAGE_PATH) => "https://image.tmdb.org/t/p/w500/"
   
 export const NETFLIX_SIGN = "https://seeklogo.com/images/N/netflix-logo-6A5D357DF8-seeklogo.com.png"
 
+export const availableLanguages = [
+  {
+      id: 1,
+      name: "English",
+      identifier: "en",
 
+  },
+  {
+    id: 2,
+    name: "Hindi",
+    identifier: "hi",
+  },
+  {
+    id: 3,
+    name: "Spanish",
+    identifier: "sp",
 
+  },
+];
+
+export const OPEN_AI_KEY = process.env.REACT_APP_OPEN_AI_KEY;

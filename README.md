@@ -38,7 +38,15 @@
 - Created custom hook for the trailer movie and updated the store MoviesSlice as well
 - Embedded the youtube video and make it auto-play and mute
 - Build Secondary Component
-- 
+- Build Movie list & movie card
+- TMDB image CDN URL
+- Use custom hooks like usePopularMovies and others
+- GPT Search PlugIn
+- GPT Search results on search page
+- Multi-language feature in the app
+- Get results from TMDB for the movie resulted from Search Query with GPT
+- Showing the resulted movies on the UI using MovieList Component
+- Saved all the keys on .env file and kept the file in the .gitignore file to keep it private
 
 
 // Using firebase for the data base

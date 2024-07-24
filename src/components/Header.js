@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react'
-import { NETFLIX_LOGO as APP_LOGO, USER_IMG } from '../utils/constants'
+import React, { useEffect, useRef } from 'react'
+import { NETFLIX_LOGO as APP_LOGO, availableLanguages, USER_IMG } from '../utils/constants'
 import { onAuthStateChanged, signOut } from 'firebase/auth'; 
 import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
+import { languageSelected, toggleGptSearchView } from '../utils/gptSlice';
 
 const Header = () => {
 
@@ -13,6 +14,10 @@ const Header = () => {
 
   const user = useSelector((store) => store.user);
   // console.log(user);
+  
+  const showGptSearch = useSelector((store) => store.gpt.showGptSearch);
+
+  const availLanguages = availableLanguages;
 
   const onSignOut = () => {
     signOut(auth).then(() => {
@@ -21,6 +26,17 @@ const Header = () => {
     }).catch((error) => {
       // An error happened.
     });
+  };
+
+  const handleGptSearchClick = () => {
+    // Toggle GPT Search button
+    dispatch(toggleGptSearchView());
+  }
+
+  const handleLanguageSelectedChange = (e) => {
+    dispatch(languageSelected({
+      lang: e.target.value
+    }));
   }
   
   useEffect(() => {
@@ -56,12 +72,33 @@ const Header = () => {
 
 
   return (
-    <div className='flex justify-between z-10 absolute px-10 py-5 w-full h-[200px] bg-gradient-to-b from-black'>
+    <div className='flex justify-between z-10 absolute px-10 py-5 w-full h-[120px] bg-gradient-to-b from-black'>
         <div className='w-32'>
             {APP_LOGO}
         </div>
         {user && 
           <div className='flex'>
+            <div>
+              <button 
+                className='px-4 py-1 bg-purple-800 text-white font-medium mr-4'
+                onClick={handleGptSearchClick}
+              >
+                GPT Search
+              </button>
+            </div>
+            {showGptSearch && (
+              <div>
+                <select 
+                  className='px-4 py-1 bg-purple-800 text-white font-medium mr-4'
+                  onChange={(e) => handleLanguageSelectedChange(e)}
+                >
+                  <option className='text-gray-400' disabled>Select Language</option>
+                  {availLanguages.map((lang) => (
+                    <option key={lang.id} value={lang.identifier}>{lang.name}</option>
+                  ))}
+                </select>
+              </div>
+            )}
             <div>
               <img 
                 src={user.photoURL}

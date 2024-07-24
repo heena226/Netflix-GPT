@@ -1,0 +1,12 @@
+[33m307caf1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: pull origin main: Merge made by the 'ort' strategy.
+[33ma2c35b9[m HEAD@{1}: commit: Search GPT, Serach page with search results, Memoization for API Calls
+[33m3cf8b9d[m HEAD@{2}: reset: moving to HEAD~1
+[33m642753a[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{3}: reset: moving to HEAD~1
+[33mf1967a6[m HEAD@{4}: commit: Search powered by GPT, Showing results on UI as per query by the user
+[33m642753a[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{5}: commit: Built Secondary Container with movie list && Custom hooks for Popular, TopRated, Upcoming Movies
+[33m3cf8b9d[m HEAD@{6}: commit: TMDB API data fetch && built MianContainer
+[33m9272e04[m HEAD@{7}: commit: Validation && Redux && Auth
+[33m09c97bc[m HEAD@{8}: commit: signin and signup form
+[33m3db1c27[m HEAD@{9}: commit: Basic changes for project
+[33m8b6493a[m HEAD@{10}: Branch: renamed refs/heads/master to refs/heads/main
+[33m8b6493a[m HEAD@{12}: commit (initial): Initialize project using Create React App

@@ -3,6 +3,8 @@ import { NETFLIX_SIGN, TDMB_IMAGE_URL } from '../utils/constants';
 
 const MovieCard = ({movie}) => {
     const imageURL = TDMB_IMAGE_URL(movie.poster_path);
+
+    if(imageURL === "https://image.tmdb.org/t/p/w500/null") return null;
   return (
     <div className='flex-shrink-0 w-[200px] mb-10 pr-2'>
         <div>
